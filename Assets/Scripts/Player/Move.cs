@@ -7,14 +7,14 @@ public class Move : MonoBehaviour
     public Rigidbody playerRigidbody;
     public Camera fpsCam;
 
-    float MoveSpeed;
+    public float MoveSpeed;
     float rotSpeed;
     float currentRot;
 
     // Start is called before the first frame update
     void Start()
     {
-        MoveSpeed = 3.0f;
+        MoveSpeed = 7.0f;
         rotSpeed = 3.0f;
         currentRot = 0f;
     }
