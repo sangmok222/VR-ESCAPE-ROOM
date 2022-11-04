@@ -16,6 +16,7 @@ public class EnemyAi : MonoBehaviour
     public float attackDisk = 5f;//공격 사정거리
     public float traceDist = 10f;//추적 사정거리
 
+   // public bool isAttack = false;
     public bool isDie = false; //사망 유무 판단
 
     //시간지연 변수
@@ -130,28 +131,34 @@ public class EnemyAi : MonoBehaviour
             switch (state)
             {
                 case State.PATROL:
-                    enemyAttack.isAttack = false;
+                    moveAgent.isAttack = false;
                     moveAgent.PATROLLING = true;
                     //animator.SetBool(hashMove, true);
                     // animator.SetBool("isMove", ture);
                     break;
                 case State.TRACE:
-                    enemyAttack.isAttack = false;
+                    moveAgent.isAttack = false;
                     moveAgent.TRACETARGET = playerTr.position;
                     //animator.SetBool(hashMove, true);
                     break;
                 case State.ATTACK:
+                    
                     moveAgent.Stop();
+                    moveAgent.isAttack = true;
+                    
                     //animator.SetBool(hashMove, true);
+                    if (moveAgent.isAttack == false)
+                    {
+                        
+                        moveAgent.isAttack = true;
 
-                    if (enemyAttack.isAttack == false)
-                        enemyAttack.isAttack = true;
+                    }
                     break;
                 case State.DIE:
                     //죽으면 태그를 변경해서 수량에서 제외 시키기
                     this.gameObject.tag = "Untagged";
                     isDie = true;
-                    enemyAttack.isAttack = false;
+                    moveAgent.isAttack = false;
                     moveAgent.Stop();
 
                    // animator.SetInteger(hashDieIdx, Random.Range(0, 3));
@@ -177,7 +184,7 @@ public class EnemyAi : MonoBehaviour
     public void OnPlayerDie()
     {
         moveAgent.Stop();
-        enemyAttack.isAttack = false;
+        moveAgent.isAttack = false;
         //동작중인 모든 코루틴 함수 종료
         StopAllCoroutines();
 

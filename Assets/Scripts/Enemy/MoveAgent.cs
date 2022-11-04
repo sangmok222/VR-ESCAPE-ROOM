@@ -45,7 +45,14 @@ public class MoveAgent : MonoBehaviour
 
 
     float damping = 1f;//회전값 속도 조절 계수
+    Transform playerTr;
     Transform enemyTr;
+    float nextAttack = 0f;
+    readonly float AttackRate = 0.1f;
+    
+
+    public bool isAttack = false; //발사 유무 판단변수
+    public AudioClip AttackSfx;
 
 
 
@@ -101,6 +108,7 @@ public class MoveAgent : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerTr = GameObject.FindGameObjectWithTag("PLAYER").GetComponent<Transform>();
         agent = GetComponent<NavMeshAgent>();
         //목적지에 도달할 수록 속도를 줄이는 기능을 끈다.
         //본게임에서 Enemy는 플레이어를 추적하므로
@@ -180,6 +188,7 @@ public class MoveAgent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         //적이 이동중일때 실행됨
         if (agent.isStopped == false)
         {
@@ -193,7 +202,7 @@ public class MoveAgent : MonoBehaviour
         //순찰 모드가 아닐 경우에 아래 코드 수행안함
         //순찰 모드일 떄만 다음 순찰 지역계산하는 코드 수행
         if (!_patrolling)
-            return;
+            //return;
         //agent.velocity.magnitude = NavMesh의 속도 //10을 넣으면 내부적으로 루트 10의 연산을 한다.
         //agent.velocity.sqrMagnitude는 제곱근 연산을 미리해줘서 성능을 좋게 만든다.
         //해당조건은 아직 움직이는 중인데 목적지에 다와가는 상황을 야기함
@@ -209,5 +218,34 @@ public class MoveAgent : MonoBehaviour
             nextIdx = Random.Range(0, wayPoints.Count);
             MoveWayPoint();
         }
+        //재장전이 아니면서 공격 가능할 때만
+        if (isAttack == true )
+        {
+            //Time.time 게임이 실행된 후 경과 시간
+
+            //다음 발사시간 = 현재시간 + 발사간격 + 랜덤한 0 ~ 0.3초
+           
+          
+           
+            //공격함수 호츨
+            Attack();
+
+            nextAttack = Time.time + AttackRate + Random.Range(0f, 0.3f);
+           
+            //                                               A                  B
+            Quaternion rot = Quaternion.LookRotation(playerTr.position - enemyTr.position);
+
+            //벡터의 빼기 = A 벡터 - B 벡터 = B에서 A가 있는 위치를 가르킴
+            //즉, enemyTr에서 playerTr을 가르키는 벡터
+            enemyTr.rotation = Quaternion.Slerp(enemyTr.rotation, rot, Time.deltaTime * damping);
+        }
+
+    }
+    void Attack()
+    {
+        //animator.SetTrigger(hashFire);
+        //audio.PlayOneShot(AttackSfx, 1f);
+        anim.CrossFade(enemyAnim.Attack1.name, 0.3f);
+
     }
 }
