@@ -46,7 +46,7 @@ public class DoorOpen : MonoBehaviour
 
                 }
             }
-        }
+        }//
         if (Input.GetKeyDown(KeyCode.E))
         {
             Ray ray = new Ray(transform.position, transform.forward);
@@ -59,7 +59,7 @@ public class DoorOpen : MonoBehaviour
 
                 }
             }
-        }
+        }//
         if (Input.GetKeyDown(KeyCode.E))
         {
             Ray ray = new Ray(transform.position, transform.forward);
