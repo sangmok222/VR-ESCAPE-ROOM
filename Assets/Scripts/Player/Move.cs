@@ -6,6 +6,7 @@ public class Move : MonoBehaviour
 {
     public Rigidbody playerRigidbody;
     public Camera fpsCam;
+    public Light lightCam;
 
     public float MoveSpeed;
     float rotSpeed;
@@ -54,5 +55,6 @@ public class Move : MonoBehaviour
         // Camera의 transform 컴포넌트의 로컬로테이션의 오일러각에 
         // 현재X축 로테이션을 나타내는 오일러각을 할당해준다.
         fpsCam.transform.localEulerAngles = new Vector3(currentRot, 0f, 0f);
+        lightCam.transform.localEulerAngles = new Vector3(currentRot, 0f, 0f);
     }
 }

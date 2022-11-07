@@ -870,6 +870,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8608368812678077517, guid: 043f03d1de0af554e9ec8ac5c61b7c62, type: 3}
+      propertyPath: lightCam
+      value: 
+      objectReference: {fileID: 1075954634}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 043f03d1de0af554e9ec8ac5c61b7c62, type: 3}
 --- !u!1 &923646240 stripped
@@ -906,6 +910,11 @@ MonoBehaviour:
   doorOpenAngle: 90
   doorCloseAngle: 0
   smoot: 2
+--- !u!108 &1075954634 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 805836243043215789, guid: 043f03d1de0af554e9ec8ac5c61b7c62, type: 3}
+  m_PrefabInstance: {fileID: 879873412}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1225666761 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6788845453346125926, guid: 9e39d9f828ba755448c69bb574224cb5, type: 3}
