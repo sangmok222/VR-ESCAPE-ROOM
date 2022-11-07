@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DoorOpen : MonoBehaviour
 {
+    /*
     public GameObject D1;
     public GameObject D2;
     public GameObject D3;
@@ -13,7 +14,7 @@ public class DoorOpen : MonoBehaviour
     public GameObject D7;
     public GameObject D8;
     public GameObject Door_V2;
-    
+    */
     
     
     public float interactDiastance = 5f;
