@@ -7,6 +7,7 @@ public class Move : MonoBehaviour
     public Rigidbody playerRigidbody;
     public Camera fpsCam;
     public Light lightCam;
+    
 
     public float MoveSpeed;
     float rotSpeed;
@@ -23,6 +24,7 @@ public class Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        PlayerAttack();
         PlayerMove();
         RotCtrl();
     }
@@ -56,5 +58,14 @@ public class Move : MonoBehaviour
         // 현재X축 로테이션을 나타내는 오일러각을 할당해준다.
         fpsCam.transform.localEulerAngles = new Vector3(currentRot, 0f, 0f);
         lightCam.transform.localEulerAngles = new Vector3(currentRot, 0f, 0f);
+    }
+
+    void PlayerAttack()
+    {
+        if(Input.GetMouseButtonDown(0))
+        {
+            GameObject.Find("Hand").GetComponent<Weapon>().Use();
+        }
+        
     }
 }
