@@ -16,6 +16,7 @@ TagManager:
   - Door5
   - Door6
   - Door7
+  - Melee
   layers:
   - Default
   - TransparentFX
