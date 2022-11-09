@@ -24,15 +24,15 @@ public class Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PlayerAttack();
+        //PlayerAttack();
         PlayerMove();
         RotCtrl();
     }
 
     void PlayerMove()
     {
-        float xInput = Input.GetAxis("Horizontal");
-        float zInput = Input.GetAxis("Vertical");
+        float xInput = ARVRInput.GetAxis("Horizontal");
+        float zInput = ARVRInput.GetAxis("Vertical");
 
         float xSpeed = xInput * MoveSpeed;
         float zSpeed = zInput * MoveSpeed;
@@ -60,12 +60,12 @@ public class Move : MonoBehaviour
         lightCam.transform.localEulerAngles = new Vector3(currentRot, 0f, 0f);
     }
 
-    void PlayerAttack()
-    {
-        if(Input.GetMouseButtonDown(0))
-        {
-            GameObject.Find("Hand").GetComponent<Weapon>().Use();
-        }
+    //void PlayerAttack()
+    //{
+    //    if(Input.GetMouseButtonDown(0))
+    //    {
+    //        GameObject.Find("Hand").GetComponent<Weapon>().Use();
+    //    }
         
-    }
+    //}
 }
