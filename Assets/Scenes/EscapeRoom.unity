@@ -647,8 +647,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 26871705}
-  m_Father: {fileID: 1818686624}
-  m_RootOrder: 5
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1433,7 +1433,6 @@ Transform:
   - {fileID: 189727030}
   - {fileID: 1608635045}
   - {fileID: 1697112566}
-  - {fileID: 499125710}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2170,6 +2169,22 @@ PrefabInstance:
       propertyPath: theInventory
       value: 
       objectReference: {fileID: 287445668}
+    - target: {fileID: 4620136029643612530, guid: 043f03d1de0af554e9ec8ac5c61b7c62, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.329
+      objectReference: {fileID: 0}
+    - target: {fileID: 4620136029643612530, guid: 043f03d1de0af554e9ec8ac5c61b7c62, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.306
+      objectReference: {fileID: 0}
+    - target: {fileID: 4620136029643612530, guid: 043f03d1de0af554e9ec8ac5c61b7c62, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.242
+      objectReference: {fileID: 0}
+    - target: {fileID: 5157954459484246288, guid: 043f03d1de0af554e9ec8ac5c61b7c62, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.333
+      objectReference: {fileID: 0}
     - target: {fileID: 5157954459484246288, guid: 043f03d1de0af554e9ec8ac5c61b7c62, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.185
@@ -2178,5 +2193,17 @@ PrefabInstance:
       propertyPath: fire_Sound
       value: 
       objectReference: {fileID: 8300000, guid: 10f182cb82b91d5489930fb068b5edcd, type: 3}
+    - target: {fileID: 5157954460368823916, guid: 043f03d1de0af554e9ec8ac5c61b7c62, type: 3}
+      propertyPath: carryBulletCount
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5157954460368823916, guid: 043f03d1de0af554e9ec8ac5c61b7c62, type: 3}
+      propertyPath: reloadBulletCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5157954460368823916, guid: 043f03d1de0af554e9ec8ac5c61b7c62, type: 3}
+      propertyPath: currentBulletCount
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 043f03d1de0af554e9ec8ac5c61b7c62, type: 3}
