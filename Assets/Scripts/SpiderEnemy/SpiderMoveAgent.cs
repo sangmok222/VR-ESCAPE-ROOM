@@ -4,30 +4,23 @@ using UnityEngine;
 using UnityEngine.AI;
 
 
-[System.Serializable]//직렬화 어트리뷰트
-public class EnemyAnim
+[System.Serializable]
+public class SpiderEnemyAnim
 {
-    public AnimationClip idle;
-    public AnimationClip Attack1;
-    public AnimationClip Attack2;
+    public AnimationClip Idle;
+    public AnimationClip Attack;
+    public AnimationClip Attack_Left;
+    public AnimationClip Attack_Right;
     public AnimationClip Run;
     public AnimationClip Walk;
     public AnimationClip Death;
-
 }
-//유니티에서 사용하는 애니메이션의 종류는 2가지
-//Legacy(구형), Mecanim(Generic, Humonoid) 타입이 존재한다.
-//Legacy - 이전 방식의 애니메이션 제어
-//Generic - 메카님애니메이션, 사람 모양외의 모델에 적용, 리타겟팅 x
-//Humanoid - 메카님애니메이션, 사람 모양의 모델에 적용, 리타겟팅 o
-//리타겟팅이란 비슷한 관절부위를 통해서 하나의 애니메이션으로 여러 모델에 적용가능한것
 
-//해당 스크립트를 동작시키기 위해서 필수적인 컴포넌트 지정
 [RequireComponent(typeof(NavMeshAgent))]
-public class MoveAgent : MonoBehaviour
+public class SpiderMoveAgent : MonoBehaviour
 {
     //인스펙터 뷰에 표시할 애니메이션 클래스 변수
-    public EnemyAnim enemyAnim;
+    public SpiderEnemyAnim SpiderEnemyAnim;
     public Animation anim; //Animation 컴포넌트 변수
 
     //순찰 지점을 저장하기 위한 리스트 타입 변수
@@ -49,7 +42,7 @@ public class MoveAgent : MonoBehaviour
     Transform enemyTr;
     float nextAttack = 0f;
     readonly float AttackRate = 0.1f;
-    
+
 
     public bool isAttack = false; //발사 유무 판단변수
     public AudioClip AttackSfx;
@@ -120,7 +113,7 @@ public class MoveAgent : MonoBehaviour
         //NavMeshAgent가 회전값 자동 갱신하는 부분 끄기
         agent.updateRotation = false;
         anim = GetComponent<Animation>();
-        anim.clip = enemyAnim.idle; //게임 시작시 재생할 클립설정
+        anim.clip = SpiderEnemyAnim.Idle; //게임 시작시 재생할 클립설정
         anim.Play();
 
 
@@ -146,7 +139,7 @@ public class MoveAgent : MonoBehaviour
         //목적지 이동시키는 함수 호출
 
         //MoveWayPoint();
-        
+
         PATROLLING = true;
 
     }
@@ -162,7 +155,7 @@ public class MoveAgent : MonoBehaviour
         agent.destination = wayPoints[nextIdx].position;
         //실제 이동 시작
         agent.isStopped = false;
-        anim.CrossFade(enemyAnim.Walk.name, 0.3f);
+        anim.CrossFade(SpiderEnemyAnim.Walk.name, 0.3f);
     }
 
     void TraceTarget(Vector3 pos)
@@ -173,7 +166,7 @@ public class MoveAgent : MonoBehaviour
 
         agent.destination = pos;
         agent.isStopped = false;
-        anim.CrossFade(enemyAnim.Run.name, 0.3f);
+        anim.CrossFade(SpiderEnemyAnim.Run.name, 0.3f);
 
     }
     public void Stop()
@@ -188,7 +181,7 @@ public class MoveAgent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         //적이 이동중일때 실행됨
         if (agent.isStopped == false)
         {
@@ -203,35 +196,35 @@ public class MoveAgent : MonoBehaviour
         //순찰 모드일 떄만 다음 순찰 지역계산하는 코드 수행
         if (!_patrolling)
             //return;
-        //agent.velocity.magnitude = NavMesh의 속도 //10을 넣으면 내부적으로 루트 10의 연산을 한다.
-        //agent.velocity.sqrMagnitude는 제곱근 연산을 미리해줘서 성능을 좋게 만든다.
-        //해당조건은 아직 움직이는 중인데 목적지에 다와가는 상황을 야기함
-        if (agent.velocity.sqrMagnitude >= 0.2f * 0.2f && agent.remainingDistance <= 0.5f)
-        {
+            //agent.velocity.magnitude = NavMesh의 속도 //10을 넣으면 내부적으로 루트 10의 연산을 한다.
+            //agent.velocity.sqrMagnitude는 제곱근 연산을 미리해줘서 성능을 좋게 만든다.
+            //해당조건은 아직 움직이는 중인데 목적지에 다와가는 상황을 야기함
+            if (agent.velocity.sqrMagnitude >= 0.2f * 0.2f && agent.remainingDistance <= 0.5f)
+            {
 
-            nextIdx++;
-            //nextIdx 값을 로테이션 시키기 위해서 사용
-            //ex) 0%3 = 0, 1%3 = 1 ...3%3 = 0
-            //위와 같이 뒤에 나머지연산하는 갯수만큼 돌고나면 다시 0으로 돌아오면서 로테이션 돌게된다.
-            //nextIdx = nextIdx % wayPoints.Count;//순회
+                nextIdx++;
+                //nextIdx 값을 로테이션 시키기 위해서 사용
+                //ex) 0%3 = 0, 1%3 = 1 ...3%3 = 0
+                //위와 같이 뒤에 나머지연산하는 갯수만큼 돌고나면 다시 0으로 돌아오면서 로테이션 돌게된다.
+                //nextIdx = nextIdx % wayPoints.Count;//순회
 
-            nextIdx = Random.Range(0, wayPoints.Count);
-            MoveWayPoint();
-        }
+                nextIdx = Random.Range(0, wayPoints.Count);
+                MoveWayPoint();
+            }
         //재장전이 아니면서 공격 가능할 때만
-        if (isAttack == true )
+        if (isAttack == true)
         {
             //Time.time 게임이 실행된 후 경과 시간
 
             //다음 발사시간 = 현재시간 + 발사간격 + 랜덤한 0 ~ 0.3초
-           
-          
-           
+
+
+
             //공격함수 호츨
             Attack();
 
             nextAttack = Time.time + AttackRate + Random.Range(0f, 0.3f);
-           
+
             //                                               A                  B
             Quaternion rot = Quaternion.LookRotation(playerTr.position - enemyTr.position);
 
@@ -245,7 +238,22 @@ public class MoveAgent : MonoBehaviour
     {
         //animator.SetTrigger(hashFire);
         //audio.PlayOneShot(AttackSfx, 1f);
-        anim.CrossFade(enemyAnim.Attack1.name, 0.3f);
+        anim.CrossFade(SpiderEnemyAnim.Attack.name, 0.3f);
+
+    }
+
+    void AttackLeft()
+    {
+        //animator.SetTrigger(hashFire);
+        //audio.PlayOneShot(AttackSfx, 1f);
+        anim.CrossFade(SpiderEnemyAnim.Attack_Left.name, 0.3f);
+
+    }
+    void AttackRigth()
+    {
+        //animator.SetTrigger(hashFire);
+        //audio.PlayOneShot(AttackSfx, 1f);
+        anim.CrossFade(SpiderEnemyAnim.Attack_Right.name, 0.3f);
 
     }
 }
