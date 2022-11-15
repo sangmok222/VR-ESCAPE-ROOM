@@ -8,13 +8,16 @@ public class JumpScare : MonoBehaviour
 
     public GameObject horrorHand;
     public GameObject zombie;
+    public GameObject point;
     private void OnTriggerStay(Collider other)
     {
         if(other.tag == "PLAYER")
         {
             delayTime += Time.deltaTime;
-            if(delayTime >= 0.5f)
-            horrorHand.SetActive(true);
+            if(delayTime >= 0.9f)
+                zombie.GetComponent<Transform>().localPosition = point.transform.localPosition;
+                horrorHand.SetActive(true);
+            
 
             if (delayTime >= 2.6f)
             {
