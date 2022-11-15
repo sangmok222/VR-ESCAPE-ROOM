@@ -166,5 +166,6 @@ public class Grab : MonoBehaviour
         }
         grabbedObject.transform.position = targetLocation;
         grabbedObject.transform.parent = ARVRInput.RHand;
+        grabbedObject.gameObject.tag = "BROKEN";
     }
 }
