@@ -127,7 +127,7 @@ public class MoveAgent : MonoBehaviour
 
         //하이어라키에서 WayPointGroup이라는 이름을 가지는 오브젝트를 검색하여 추출
         //Finde 함수는 성능이 굉장히 안좋기 때문에 업데이트 함수내에서 FInd를 호출하는 일은 피해가자
-        var group = GameObject.Find("WayPoint");
+        var group = GameObject.Find("WayPointGroup");
         //null 체크를 통해서 해당 오브젝트가 존재하는지 체크
         if (group != null)
         {   //추출한 WayPointGroup 라는 이름의 오브젝트에서
@@ -213,7 +213,7 @@ public class MoveAgent : MonoBehaviour
             //nextIdx 값을 로테이션 시키기 위해서 사용
             //ex) 0%3 = 0, 1%3 = 1 ...3%3 = 0
             //위와 같이 뒤에 나머지연산하는 갯수만큼 돌고나면 다시 0으로 돌아오면서 로테이션 돌게된다.
-            //nextIdx = nextIdx % wayPoints.Count;//순회
+            nextIdx = nextIdx % wayPoints.Count;
 
             nextIdx = Random.Range(0, wayPoints.Count);
             MoveWayPoint();
