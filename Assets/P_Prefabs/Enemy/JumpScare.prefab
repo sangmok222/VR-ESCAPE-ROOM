@@ -209,7 +209,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 280d4a34bf1475540afcc0c135d86c7d, type: 2}
+  - {fileID: 2100000, guid: 80ca50f34f76dea4b9c78a89e4ee91e4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -255,7 +255,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6972095255162152606}
   - component: {fileID: 6972095255162152601}
-  - component: {fileID: 6972095255162152607}
+  - component: {fileID: 792413115}
   m_Layer: 0
   m_Name: Spot Light (1)
   m_TagString: Untagged
@@ -340,7 +340,7 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!95 &6972095255162152607
+--- !u!95 &792413115
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -350,7 +350,7 @@ Animator:
   m_GameObject: {fileID: 6972095255162152600}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a72325484f59ec54792c1a1393dae019, type: 2}
+  m_Controller: {fileID: 9100000, guid: b4e8b0a88069edb48abd526fc0a6824f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
