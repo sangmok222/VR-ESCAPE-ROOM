@@ -1,0 +1,44 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Broken : MonoBehaviour
+{
+    public GameObject prefab;
+    GameObject kettle;
+    void Start()
+    {
+        //prefab = Resources.Load<GameObject>("Kettles");
+        //kettle = Instantiate(prefab);
+
+        //Destroy(kettle, 3.0f);
+    }
+
+    void Update()
+    {
+        
+    }
+
+    void KettleBorken()
+    {
+        
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+<<<<<<< HEAD
+        if (collision.gameObject.tag == "ASYLUM" || collision.gameObject.tag == "PLAYER") //Áö±ÝÀº ¸Ê ÅÂ±×¿¡ ºÎµúÈ÷¸é ÃßÈÄ ÇÃ·¹ÀÌ¾î°¡ ÈÖµÎ¸£´Â ¹«±â³ª ½î´Â ¹«±â¿¡ ¸Â¾Æµµ È¿°ú°¡ ÀÖÀ»·Á¸é || È°¿ëÇÒ °Í
+=======
+        if (collision.gameObject.tag == "ASYLUM" && gameObject.tag == "BROKEN" ) //Áö±ÝÀº ¸Ê ÅÂ±×¿¡ ºÎµúÈ÷¸é ÃßÈÄ ÇÃ·¹ÀÌ¾î°¡ ÈÖµÎ¸£´Â ¹«±â³ª ½î´Â ¹«±â¿¡ ¸Â¾Æµµ È¿°ú°¡ ÀÖÀ»·Á¸é || È°¿ëÇÒ °Í
+>>>>>>> origin/ë°•í˜„ìš°
+        {
+            Destroy(this.gameObject); //ÀÚ±â ¿ÀºêÁ§Æ® »èÁ¦
+            GameObject go = Instantiate(prefab, transform.position, Quaternion.identity);
+            //prefab = Resources.Load<GameObject>("Kettles");
+            //kettle = Instantiate(prefab,transform.position, Quaternion.identity, null);
+            //Destroy(go, 3.0f); //°®°í¿Â ÇÁ¸®Æé 3ÃÊÈÄ »èÁ¦
+        }
+        
+
+    }
+}
