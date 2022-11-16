@@ -17,13 +17,8 @@ TagManager:
   - Door6
   - Door7
   - Melee
-<<<<<<< HEAD
-  - SHEET
-  - ASYLUM
-=======
   - ASYLUM
   - SHEET
->>>>>>> origin/박현우
   layers:
   - Default
   - TransparentFX
@@ -33,7 +28,11 @@ TagManager:
   - UI
   - PLAYER
   - Weapon
+<<<<<<< HEAD
   - OBJECT
+=======
+  - Wall
+>>>>>>> origin/사우진
   - 
   - 
   - 
