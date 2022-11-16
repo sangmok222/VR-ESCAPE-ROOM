@@ -36,8 +36,8 @@ public class Move : MonoBehaviour
         float xSpeed = xInput * MoveSpeed;
         float zSpeed = zInput * MoveSpeed;
 
-        transform.Translate(Vector3.forward * zSpeed * Time.deltaTime);
-        transform.Translate(Vector3.right * xSpeed * Time.deltaTime);
+        transform.Translate(Vector3.forward.normalized * zSpeed * Time.deltaTime);
+        transform.Translate(Vector3.right.normalized * xSpeed * Time.deltaTime);
     }
 
     void RotCtrl()
