@@ -12,6 +12,7 @@ public class ButtonTrigger : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 0.0f;
         main.SetActive(true);
         gameUI.SetActive(true);
         subUI.SetActive(false);
