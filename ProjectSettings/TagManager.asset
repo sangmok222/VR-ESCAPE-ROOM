@@ -17,6 +17,8 @@ TagManager:
   - Door6
   - Door7
   - Melee
+  - ASYLUM
+  - SHEET
   layers:
   - Default
   - TransparentFX
@@ -26,7 +28,7 @@ TagManager:
   - UI
   - PLAYER
   - Weapon
-  - 
+  - Wall
   - 
   - 
   - 

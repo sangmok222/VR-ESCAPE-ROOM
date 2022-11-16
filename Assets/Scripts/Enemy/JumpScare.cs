@@ -14,12 +14,14 @@ public class JumpScare : MonoBehaviour
         if(other.tag == "PLAYER")
         {
             delayTime += Time.deltaTime;
-            if(delayTime >= 0.9f)
+            if(delayTime >=  1f)
+            {
                 zombie.GetComponent<Transform>().localPosition = point.transform.localPosition;
                 horrorHand.SetActive(true);
+            }
             
 
-            if (delayTime >= 2.6f)
+            if ( 1f< delayTime && delayTime >= 2.6f)
             {
             zombie.SetActive(false);
             horrorHand.SetActive(false);
@@ -29,10 +31,12 @@ public class JumpScare : MonoBehaviour
         }
         
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerExit(Collider other)
     {
-        delayTime = 0f;
+        if(delayTime >= 2.7f)
+        Destroy(gameObject);
     }
+
     void Start()
     {
         
@@ -41,8 +45,8 @@ public class JumpScare : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
        
         
-        Debug.Log(delayTime);
     }
 }

@@ -181,11 +181,11 @@ public class SpiderMoveAgent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         //적이 이동중일때 실행됨
         if (agent.isStopped == false)
         {
             //NavMeshAgent 가 진행해야될 방향을 구함
+
             Quaternion rot = Quaternion.LookRotation(agent.desiredVelocity); //desiredVelocity 내가 원하는 방향으로 휙 튼다
 
             enemyTr.rotation = Quaternion.Slerp(enemyTr.rotation, rot, Time.deltaTime * damping);//카메라 때랑 비슷함
@@ -194,7 +194,7 @@ public class SpiderMoveAgent : MonoBehaviour
 
         //순찰 모드가 아닐 경우에 아래 코드 수행안함
         //순찰 모드일 떄만 다음 순찰 지역계산하는 코드 수행
-        if (!_patrolling)
+            //if (!_patrolling)
             //return;
             //agent.velocity.magnitude = NavMesh의 속도 //10을 넣으면 내부적으로 루트 10의 연산을 한다.
             //agent.velocity.sqrMagnitude는 제곱근 연산을 미리해줘서 성능을 좋게 만든다.
@@ -215,6 +215,7 @@ public class SpiderMoveAgent : MonoBehaviour
         if (isAttack == true)
         {
             //Time.time 게임이 실행된 후 경과 시간
+
 
             //다음 발사시간 = 현재시간 + 발사간격 + 랜덤한 0 ~ 0.3초
 
