@@ -12,6 +12,7 @@ public class Move : MonoBehaviour
     public float MoveSpeed;
     float rotSpeed;
     float currentRot;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -24,8 +25,12 @@ public class Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //PlayerAttack();
         PlayerMove();
         RotCtrl();
+        //Vector3 movDir = (Vector3.forward * zInput) + (Vector3.right * xInput);
+        //transform.Translate(movDir.normalized * MoveSpeed * Time.deltaTime, Space.Self);
+
     }
 
     void PlayerMove()
@@ -36,8 +41,8 @@ public class Move : MonoBehaviour
         float xSpeed = xInput * MoveSpeed;
         float zSpeed = zInput * MoveSpeed;
 
-        transform.Translate(Vector3.forward.normalized * zSpeed * Time.deltaTime);
-        transform.Translate(Vector3.right.normalized * xSpeed * Time.deltaTime);
+        transform.Translate(Vector3.forward.normalized* zSpeed * Time.deltaTime, Space.Self);
+        transform.Translate(Vector3.right.normalized * xSpeed * Time.deltaTime, Space.Self);
     }
 
     void RotCtrl()

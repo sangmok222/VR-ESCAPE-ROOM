@@ -33,11 +33,11 @@ public class CameraFilterPack_TV_ARCADE : MonoBehaviour {
 	{
 		SCShader = Shader.Find("CameraFilterPack/TV_ARCADE");
 
-		if(!SystemInfo.supportsImageEffects)
-		{
-			enabled = false;
-			return;
-		}
+		//if(!systeminfo.supportsimageeffects)
+		//{
+		//	enabled = false;
+		//	return;
+		//}
 	}
 	
 	void OnRenderImage (RenderTexture sourceTexture, RenderTexture destTexture)

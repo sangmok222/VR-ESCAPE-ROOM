@@ -28,7 +28,11 @@ TagManager:
   - UI
   - PLAYER
   - Weapon
-  - 
+<<<<<<< HEAD
+  - OBJECT
+=======
+  - Wall
+>>>>>>> origin/사우진
   - 
   - 
   - 
