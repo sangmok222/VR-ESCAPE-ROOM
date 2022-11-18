@@ -7,7 +7,8 @@ public class Move : MonoBehaviour
     public Rigidbody playerRigidbody;
     public Camera fpsCam;
     public Light lightCam;
-    public GameObject holder;
+    //public GameObject holder;
+    
 
     public float MoveSpeed;
     float rotSpeed;
