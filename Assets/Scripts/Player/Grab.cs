@@ -9,7 +9,7 @@ public class Grab : MonoBehaviour
     bool isGrabbing = false;
     GameObject grabbedObject;
     public LayerMask grabbedLayer;
-    public float grabRange = 0.05f; //±×·¦ »ç°Å¸®
+    public float grabRange = 0.2f; //±×·¦ »ç°Å¸®
 
     public bool isRemoteGrab = true;
     public float remoteGrabDistance = 20f;
