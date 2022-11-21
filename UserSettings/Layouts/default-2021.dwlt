@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Inspector
+  m_Title: Hierarchy
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 74247
+  controlID: 119
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 74325
+  controlID: 120
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 74253
+  controlID: 37
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -243,8 +243,8 @@ MonoBehaviour:
     y: 0
     width: 476
     height: 501
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -341,11 +341,11 @@ MonoBehaviour:
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
-  m_EnterPlayModeBehavior: 1
+  m_EnterPlayModeBehavior: 0
   m_UseMipMap: 0
   m_VSyncEnabled: 0
   m_Gizmos: 0
-  m_Stats: 1
+  m_Stats: 0
   m_SelectedSizes: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
   m_ZoomArea:
     m_HRangeLocked: 0
@@ -669,9 +669,9 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.0017858567, y: 0.06683626, z: -0.00047883985, w: -0.9979667}
+    m_Target: {x: -0.109614596, y: -0.008119428, z: 0.00052742445, w: -0.994146}
     speed: 2
-    m_Value: {x: -0.0017858567, y: 0.06683626, z: -0.00047883985, w: -0.9979667}
+    m_Value: {x: -0.109614596, y: -0.008119428, z: 0.0005274244, w: -0.99414593}
   m_Size:
     m_Target: 1.2374998
     speed: 2
@@ -759,9 +759,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: a0290700
-      m_LastClickedID: 469408
-      m_ExpandedIDs: a69afdffc29afdffec9afdff0c9efdff169efdffaea0fdffa8a9fdff12b2fdff80fafdff8cfafdff8616feff4e35feffee35fefff639feff963afeff1e3ffeff0c47feff984ffeff3a50feff505bfeffe65dfeff1a65feff146afeffa07ffeff828ffeffc29dfeffc6a9feff4cb3feff3cc0feffe6e6ffff94fe00000cff0000dc000100e6140100fc140100821501009815010040160100b6160100c2160100c6160100281701002c1701003e170100541701006817010070170100f217010040180100fe18010042190100821901008419010094190100fe190100001a01005a1a0100221b0100361b0100441b0100681b01006a1b0100be1b0100d61b0100e01b0100481c0100761c0100921c0100e41c0100121d01001c1d0100561d0100801d01009c1d0100e61d01008e1e0100f21e0100441f01007c1f0100463401004a3401004c3401005034010052340100e04f0400365004001ec7040052cd0400b2ce040014cf0400e2cf04004a230700382b0700062c0700
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 2cfbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -826,22 +826,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Player/Item
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scripts/Player/Item
+  - Assets/Scenes
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\admin\Documents\GitHub\TeamProject
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 31}
-    m_SelectedIDs: bc390100
-    m_LastClickedID: 80316
-    m_ExpandedIDs: 000000007239010074390100783901007a3901007c3901004849050000ca9a3b
+    scrollPos: {x: 0, y: 19.00003}
+    m_SelectedIDs: 3c890000
+    m_LastClickedID: 35132
+    m_ExpandedIDs: 000000001489000016890000188900001a8900001c89000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -869,7 +869,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000007239010074390100783901007a3901004849050000ca9a3b
+    m_ExpandedIDs: 000000001489000016890000188900001a8900001c890000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
