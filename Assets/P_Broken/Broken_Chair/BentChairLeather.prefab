@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 4586936662177204089}
   - component: {fileID: 578652088411015388}
   - component: {fileID: 3450670234968931350}
-  - component: {fileID: 3952398323379335801}
   - component: {fileID: 8715902666731489895}
   - component: {fileID: 1162264376829891853}
+  - component: {fileID: 7551967252801547696}
+  - component: {fileID: 7722099052750667491}
   m_Layer: 8
   m_Name: BentChairLeather
   m_TagString: Untagged
@@ -86,20 +87,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3952398323379335801
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3811103272353766851}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 1384825823014573669, guid: adaf8093a4a61ce4a9c7fd7a63c0d115, type: 3}
 --- !u!54 &8715902666731489895
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -129,3 +116,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 714052713563407373, guid: d84facc0f13e4e54e861cb3ff0a11b8c, type: 3}
+--- !u!65 &7551967252801547696
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3811103272353766851}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.005426052, y: 0.008102222, z: 0.0048557413}
+  m_Center: {x: -0.0002926144, y: 0.006393547, z: -0.0006392387}
+--- !u!65 &7722099052750667491
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3811103272353766851}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.00024416804, y: 0.0022111454, z: 0.0005204445}
+  m_Center: {x: 0.0021092123, y: 0.001, z: -0.0029}
