@@ -11,6 +11,8 @@ public class Projector : MonoBehaviour
     public GameObject[] ProjectorRot;
 
     public float rotSpeed = 5f;
+
+    public ProjectorRot cubeRot = null;
     
 
     private void Start()
@@ -29,8 +31,8 @@ public class Projector : MonoBehaviour
         {
             VideoPlay();
             LightStart();
+            cubeRot.StartRotate();
             Invoke("ExitProjector", 40f);
-            ProjectorRotate();
         }
 
     }
@@ -60,15 +62,10 @@ public class Projector : MonoBehaviour
     {
         video.enabled = false;
         light.enabled = false;
+        cubeRot.StopRotate();
     }
 
-    void ProjectorRotate()
-    {
-        while (true)
-        {
-            projector.transform.Rotate(Vector3.up * rotSpeed * Time.deltaTime);
-        }
-    }
+    
 }
 
 
