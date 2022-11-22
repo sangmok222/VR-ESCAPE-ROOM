@@ -8,14 +8,18 @@ public class Projector : MonoBehaviour
     public VideoPlayer video;
     public Light light;
     public GameObject projector;
+    public GameObject[] ProjectorRot;
+
+    public float rotSpeed = 5f;
     
 
     private void Start()
     {
-        video = GetComponent<VideoPlayer>();
-        light = GetComponent<Light>();
+        //video = GetComponent<VideoPlayer>();
+        //light = GetComponentInChildren<Light>();
 
-        projector = GetComponent<GameObject>();
+        //projector = GetComponent<GameObject>();
+        
         
     }
 
@@ -25,25 +29,45 @@ public class Projector : MonoBehaviour
         {
             VideoPlay();
             LightStart();
+            Invoke("ExitProjector", 40f);
+            ProjectorRotate();
         }
 
     }
 
 
 
-
     void VideoPlay()
     {
-        GetComponentInChildren<VideoPlayer>().Play();
-        projector.SetActive(true);
+        
+            video.Play();
     }
-
+    
     void LightStart()
     {
-        GetComponentInChildren<Light>();
-        light.gameObject.SetActive(true);
+        if (light.enabled == false)
+        {
+            light.enabled = true;
+        }
+        else
+        {
+            light.enabled = false;
+        }
+        
+    }
 
+    public void ExitProjector()
+    {
+        video.enabled = false;
+        light.enabled = false;
+    }
 
+    void ProjectorRotate()
+    {
+        while (true)
+        {
+            projector.transform.Rotate(Vector3.up * rotSpeed * Time.deltaTime);
+        }
     }
 }
 
