@@ -8,12 +8,16 @@ public class Projector : MonoBehaviour
     public VideoPlayer video;
     public Light light;
     public GameObject projector;
-    public GameObject[] ProjectorRot;
 
     public float rotSpeed = 5f;
 
     public ProjectorRot cubeRot = null;
+    public ProjectorRot cubeRot1 = null;
+
+
     
+
+
 
     private void Start()
     {
@@ -32,19 +36,16 @@ public class Projector : MonoBehaviour
             VideoPlay();
             LightStart();
             cubeRot.StartRotate();
-            Invoke("ExitProjector", 40f);
+            cubeRot1.StartRotate();
+            Invoke("ExitProjector", 31f);
         }
 
     }
-
-
-
     void VideoPlay()
     {
         
             video.Play();
     }
-    
     void LightStart()
     {
         if (light.enabled == false)
@@ -57,12 +58,12 @@ public class Projector : MonoBehaviour
         }
         
     }
-
     public void ExitProjector()
     {
         video.enabled = false;
         light.enabled = false;
         cubeRot.StopRotate();
+        cubeRot1.StopRotate();
     }
 
     
