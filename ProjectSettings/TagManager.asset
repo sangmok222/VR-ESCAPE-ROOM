@@ -19,6 +19,10 @@ TagManager:
   - Melee
   - ASYLUM
   - SHEET
+  - BROKEN
+  - FDOOR
+  - FDOOR1
+  - SHEET1
   layers:
   - Default
   - TransparentFX

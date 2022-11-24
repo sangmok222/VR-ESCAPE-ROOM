@@ -18,101 +18,133 @@ public class DoorOpen : MonoBehaviour
     
     
     public float interactDiastance = 5f;
-
+    private Animator ani;
+    bool open;
+    private void Start()
+    {
+        ani = GetComponent<Animator>();
+    }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Ray ray = new Ray(transform.position, transform.forward);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, interactDiastance))
-            {
-                if (hit.collider.CompareTag("Door"))
-                {
-                    GameObject.Find("Door_V1").GetComponent<Door>().ChangeDoorState();
+        // 하나의 태그로관리 2022.11.24 우진
+        //if (Input.GetKeyDown(KeyCode.E))
+        //{
+        //    Ray ray = new Ray(transform.position, transform.forward);
+        //    RaycastHit hit;
+        //    if (Physics.Raycast(ray, out hit, interactDiastance))
+        //    {
+        //        if (hit.collider.CompareTag("Door"))
+        //        {
+        //            GameObject.Find("Door_V1").GetComponent<Door>().ChangeDoorState();
                     
-                }
-            }
-        }
+        //        }
+        //    }
+        //}
+        //if (Input.GetKeyDown(KeyCode.E))
+        //{
+        //    Ray ray = new Ray(transform.position, transform.forward);
+        //    RaycastHit hit;
+        //    if (Physics.Raycast(ray, out hit, interactDiastance))
+        //    {
+        //        if (hit.collider.CompareTag("Door1"))
+        //        {
+        //            GameObject.Find("Door_V1 (1)").GetComponent<Door>().ChangeDoorState();
+
+        //        }
+        //    }
+        //}//
+        //if (Input.GetKeyDown(KeyCode.E))
+        //{
+        //    Ray ray = new Ray(transform.position, transform.forward);
+        //    RaycastHit hit;
+        //    if (Physics.Raycast(ray, out hit, interactDiastance))
+        //    {
+        //        if (hit.collider.CompareTag("Door2"))
+        //        {
+        //            GameObject.Find("Door_V1 (2)").GetComponent<Door>().ChangeDoorState();
+
+        //        }
+        //    }
+        //}//
+        //if (Input.GetKeyDown(KeyCode.E))
+        //{
+        //    Ray ray = new Ray(transform.position, transform.forward);
+        //    RaycastHit hit;
+        //    if (Physics.Raycast(ray, out hit, interactDiastance))
+        //    {
+        //        if (hit.collider.CompareTag("Door3"))
+        //        {
+        //            GameObject.Find("Door_V1 (5)").GetComponent<Door>().ChangeDoorState();
+
+        //        }
+        //    }
+        //}//
+        //if (Input.GetKeyDown(KeyCode.E))
+        //{
+        //    Ray ray = new Ray(transform.position, transform.forward);
+        //    RaycastHit hit;
+        //    if (Physics.Raycast(ray, out hit, interactDiastance))
+        //    {
+        //        if (hit.collider.CompareTag("Door4"))
+        //        {
+        //            GameObject.Find("Door_V1 (3)").GetComponent<Door>().ChangeDoorState();
+
+        //        }
+        //    }
+        //}//
+        //if (Input.GetKeyDown(KeyCode.E))
+        //{
+        //    Ray ray = new Ray(transform.position, transform.forward);
+        //    RaycastHit hit;
+        //    if (Physics.Raycast(ray, out hit, interactDiastance))
+        //    {
+        //        if (hit.collider.CompareTag("Door5"))
+        //        {
+        //            GameObject.Find("Door_V1 (4)").GetComponent<Door>().ChangeDoorState();
+
+        //        }
+        //    }
+        //}//
+        //if (Input.GetKeyDown(KeyCode.E))
+        //{
+        //    Ray ray = new Ray(transform.position, transform.forward);
+        //    RaycastHit hit;
+        //    if (Physics.Raycast(ray, out hit, interactDiastance))
+        //    {
+        //        if (hit.collider.CompareTag("Door7"))
+        //        {
+        //            GameObject.Find("Door_V1 (7)").GetComponent<Door>().ChangeDoorState();
+
+        //        }
+        //    }
+        //}//
+
+        //////////////////////////////////냉장고 문 열기///////////////////////////
         if (Input.GetKeyDown(KeyCode.E))
         {
             Ray ray = new Ray(transform.position, transform.forward);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, interactDiastance))
             {
-                if (hit.collider.CompareTag("Door1"))
+                if (hit.collider.CompareTag("FDOOR"))
                 {
-                    GameObject.Find("Door_V1 (1)").GetComponent<Door>().ChangeDoorState();
-
+                    hit.transform.GetComponent<FridgeOpen>().ChangeDoorState();
+                }
+                //else if (hit.collider.CompareTag("FDOOR"))
+                //{
+                //    GameObject.Find("FridgeDoor").GetComponent<FridgeOpen>().ChangeDoorState();
+                //}
+                
+                else if (hit.collider.CompareTag("SHEET"))
+                {
+                    hit.transform.GetComponent<SheetRackCaseAni>().aniplay();
+                }   
+                else if (hit.collider.CompareTag("Door"))
+                {
+                    hit.transform.GetComponent<Door>().ChangeDoorState();
                 }
             }
         }//
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Ray ray = new Ray(transform.position, transform.forward);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, interactDiastance))
-            {
-                if (hit.collider.CompareTag("Door2"))
-                {
-                    GameObject.Find("Door_V1 (2)").GetComponent<Door>().ChangeDoorState();
-
-                }
-            }
-        }//
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Ray ray = new Ray(transform.position, transform.forward);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, interactDiastance))
-            {
-                if (hit.collider.CompareTag("Door3"))
-                {
-                    GameObject.Find("Door_V1 (5)").GetComponent<Door>().ChangeDoorState();
-
-                }
-            }
-        }//
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Ray ray = new Ray(transform.position, transform.forward);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, interactDiastance))
-            {
-                if (hit.collider.CompareTag("Door4"))
-                {
-                    GameObject.Find("Door_V1 (3)").GetComponent<Door>().ChangeDoorState();
-
-                }
-            }
-        }//
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Ray ray = new Ray(transform.position, transform.forward);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, interactDiastance))
-            {
-                if (hit.collider.CompareTag("Door5"))
-                {
-                    GameObject.Find("Door_V1 (4)").GetComponent<Door>().ChangeDoorState();
-
-                }
-            }
-        }//
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Ray ray = new Ray(transform.position, transform.forward);
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, interactDiastance))
-            {
-                if (hit.collider.CompareTag("Door7"))
-                {
-                    GameObject.Find("Door_V1 (7)").GetComponent<Door>().ChangeDoorState();
-
-                }
-            }
-        }//
-        
-
+       
     }
 }
