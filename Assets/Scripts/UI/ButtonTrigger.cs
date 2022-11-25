@@ -44,17 +44,17 @@ public class ButtonTrigger : MonoBehaviour
 
     public void SubUITrigger()
     {
-        if (Input.GetButtonDown("Escape"))
-        {
+        //if (Input.GetButtonDown("Escape"))
+        //{
             if (subUI.activeSelf)
             {
                 PlayGame();
             }
-        }
-        else
-        {
-            PauseGame();
-        }
+        //}
+        //else
+        //{
+        //    PauseGame();
+        //}
     }
 
     public void CloseSubUI()

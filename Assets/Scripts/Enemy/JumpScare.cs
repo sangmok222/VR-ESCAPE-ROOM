@@ -27,16 +27,13 @@ public class JumpScare : MonoBehaviour
             horrorHand.SetActive(false);
             //delayTime = 0;
             }
+            if( delayTime >=2.7f)
+                Destroy(gameObject);
 
         }
         
     }
-    private void OnTriggerExit(Collider other)
-    {
-        if(delayTime >= 2.7f)
-        Destroy(gameObject);
-    }
-
+    
     void Start()
     {
         

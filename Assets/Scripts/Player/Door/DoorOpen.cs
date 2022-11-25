@@ -36,7 +36,7 @@ public class DoorOpen : MonoBehaviour
         //        if (hit.collider.CompareTag("Door"))
         //        {
         //            GameObject.Find("Door_V1").GetComponent<Door>().ChangeDoorState();
-                    
+
         //        }
         //    }
         //}
@@ -119,8 +119,21 @@ public class DoorOpen : MonoBehaviour
         //    }
         //}//
 
-        //////////////////////////////////냉장고 문 열기///////////////////////////
-        if (Input.GetKeyDown(KeyCode.E))
+       
+        //if (OVRInput.GetDown(OVRInput.Button.Two) || Input.GetKeyDown(KeyCode.E))
+        //{
+        //    Ray ray = new Ray(transform.position, transform.forward);
+        //    RaycastHit hit;
+        //    if (Physics.Raycast(ray, out hit, interactDiastance))
+        //    {
+        //        if (hit.collider.CompareTag("Door6"))
+        //        {
+        //            GameObject.Find("Door_V1 (6)").GetComponent<Door>().ChangeDoorState();
+
+        //        }
+        //    }
+        //}
+        if (OVRInput.GetDown(OVRInput.Button.Two) || Input.GetKeyDown(KeyCode.E))
         {
             Ray ray = new Ray(transform.position, transform.forward);
             RaycastHit hit;

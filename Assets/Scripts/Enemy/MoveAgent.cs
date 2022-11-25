@@ -201,7 +201,7 @@ public class MoveAgent : MonoBehaviour
 
         //순찰 모드가 아닐 경우에 아래 코드 수행안함
         //순찰 모드일 떄만 다음 순찰 지역계산하는 코드 수행
-        if (!_patrolling)
+        //if (!_patrolling)
             //return;
         //agent.velocity.magnitude = NavMesh의 속도 //10을 넣으면 내부적으로 루트 10의 연산을 한다.
         //agent.velocity.sqrMagnitude는 제곱근 연산을 미리해줘서 성능을 좋게 만든다.

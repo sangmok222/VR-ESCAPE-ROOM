@@ -9,9 +9,6 @@ TagManager:
   - PLAYER
   - RoomLight
   - Door
-  - Door1
-  - Door2
-  - Door3
   - Door4
   - Door5
   - Door6
@@ -23,6 +20,10 @@ TagManager:
   - FDOOR
   - FDOOR1
   - SHEET1
+  - Door3
+  - Door1
+  - Door2
+  - ENEMY
   layers:
   - Default
   - TransparentFX

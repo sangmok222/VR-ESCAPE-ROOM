@@ -25,7 +25,7 @@ public class Inventory : MonoBehaviour
 
     private void TryOpenInventory()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (OVRInput.GetDown(OVRInput.Button.One))
         {
             invectoryActivated = !invectoryActivated;
 
