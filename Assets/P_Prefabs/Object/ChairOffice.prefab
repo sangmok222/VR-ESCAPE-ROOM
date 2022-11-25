@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7938494473544741030}
   - component: {fileID: 7945259996020363746}
   - component: {fileID: 7957585290444832830}
-  - component: {fileID: 7987240932324188094}
   - component: {fileID: 7987240932324188095}
   - component: {fileID: 7957585290444832831}
+  - component: {fileID: 8569772402107669548}
   m_Layer: 8
   m_Name: ChairOffice
   m_TagString: Untagged
@@ -86,20 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7987240932324188094
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7942152232263084692}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 69f7c30f3ddce4e44aefc10a953425fd, type: 3}
 --- !u!54 &7987240932324188095
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -129,3 +115,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 6481967817091306325, guid: 8e80f65d42209ac4080f71a0e5464be6, type: 3}
+--- !u!65 &8569772402107669548
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7942152232263084692}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.48733914, y: 1.1759181, z: 0.5779671}
+  m_Center: {x: 0.003414505, y: 0.588004, z: 0.04876751}

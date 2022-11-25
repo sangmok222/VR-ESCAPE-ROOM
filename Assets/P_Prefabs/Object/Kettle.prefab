@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6992552677664350047}
   - component: {fileID: 7042969059780870316}
   - component: {fileID: 7042969059780870319}
-  - component: {fileID: 7042969059780870313}
+  - component: {fileID: 3333362875936596481}
   m_Layer: 8
   m_Name: Kettle
   m_TagString: BROKEN
@@ -115,17 +115,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!64 &7042969059780870313
-MeshCollider:
+--- !u!65 &3333362875936596481
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7016191337152847081}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: d476e1ed3398e9243ad72fc1dcbc2639, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: d2869bfcb17962c42802809e8a9b2ffb, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.142062, y: 0.206779, z: 0.14718834}
+  m_Center: {x: 2.0002483e-10, y: 0.1035375, z: -0.0040828027}

@@ -5,59 +5,76 @@ using UnityEngine.Assertions.Must;
 
 public class SheetRackCaseAni : MonoBehaviour
 {
-    public float distance = 5f; //레이의 길이
-    public RaycastHit rayHit; //Ray가 맞았다는 걸 알려주는 변수
-    public Ray ray; // 사용 될 레이 변수
-    bool open = true;
+    //private Camera playerCam;
+    
+    //public float distance = 5f; //레이의 길이
+    //public RaycastHit rayHit; //Ray가 맞았다는 걸 알려주는 변수
+    //public Ray ray; // 사용 될 레이 변수
     public Animator ani;
+    
+
     void Start()
     {
-        ray = new Ray(); //new를 이용해 레이를 하나 생성
-        ani = GetComponent<Animator>();
-    }
+        //playerCam = Camera.main;//게임이 시작 되면 활성화된 메인 카메라를 가져온다.
+        //ray = new Ray(); //new를 이용해 레이를 하나 생성
+        //ani = GetComponent<Animator>();
+        Animator ani = GetComponent<Animator>();
 
+    }
+    
+
+    public void aniplay()
+    {
+        if (ani.GetBool("Open") == false)
+        {
+            ani.SetBool("Open", true);
+        }
+        else if (ani.GetBool("Open") == true)
+        {
+            ani.SetBool("Open", false);
+        }
+        
+        
+    }
     void Update()
     {
-        ray.origin = this.transform.position; //레이 위치를 사용할 오브젝트 위치 적용
-        ray.direction = this.transform.forward;//레이 방향을 사용할 오브젝트 방향 적용 
+
+        ////카메라의 중앙을 기준으로 레이를 쏜다.
+        ////rayOrigin : 광선이 날아갈 정중앙위치, 
+        ////ViewportToWorldPoint : 카메라의 한 지점의 위치가 게임상에서
+        ////어느 위치(가로 중앙, 세로 중, 카메라의 깊이)를 리턴
+        //Vector3 rayOrigin = playerCam.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0f));
+
+        //Vector3 rayDir = playerCam.transform.forward; //카메라의 정면을 기준으로 레이를 쏜다.
+
+        //Ray ray = new Ray(rayOrigin, rayDir);
 
         //if (Input.GetKeyDown(KeyCode.G))
         //{
-        //    if (Physics.Raycast(ray, out rayHit, distance))
+
+        //    //레이캐스트는 물리처리 이므로 pHysics의 함수
+        //    //Raycase(광선 시작지점, 방향, 거리)
+        //    if (Physics.Raycast(rayOrigin, rayDir, distance))
         //    {
-        //        if (rayHit.collider.CompareTag("SHEET"))
+        //        if (rayHit.collider.gameObject.tag == "SHEET")
+
         //        {
-        //            rayHit.transform.GetComponent<Animator>().SetBool("Open", open);
-        //            open = !open;
+        //            ani.SetBool("Open", true);
         //        }
         //    }
+            
         //}
 
-        if (Input.GetKeyDown(KeyCode.G)) //G키 누르면
-        {                     //레이 위치,      레이 방향,     레이 반환, 레이 길이 
-            if (Physics.Raycast(ray.origin, ray.direction, out rayHit, distance))
-            {
-                if (rayHit.collider.CompareTag("SHEET"))
-                {
-                    rayHit.transform.GetComponent<Animator>().SetBool("Open", open);
-                    open = !open;
-                }
-
-            }
-        }
-
+        
 
     }
 
 
-    private void OnDrawGizmos()
-    {                 //레이 위치,    레이 방향   *  레이길이    빨간색
-        Debug.DrawRay(ray.origin, ray.direction * distance ,Color.red);
-    }
-
-
-
+    
    
+
+
+            
 
 
 

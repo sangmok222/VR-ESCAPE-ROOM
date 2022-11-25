@@ -4,41 +4,40 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
-    public Rigidbody playerRigidbody;
-    public Camera fpsCam;
-    public Light lightCam;
-    public GameObject holder;
+    private Rigidbody playerRigidbody;
+
 
     public float MoveSpeed;
-    float rotSpeed;
-    float currentRot;
+    public float rotSpeed;
+    public float currentRot;
 
-    // Start is called before the first frame update
+
+
     void Start()
     {
-        MoveSpeed = 7.0f;
+        playerRigidbody = GetComponent<Rigidbody>();
+        MoveSpeed = 3.0f;
         rotSpeed = 3.0f;
         currentRot = 0f;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        //PlayerAttack();
         PlayerMove();
         RotCtrl();
     }
 
     void PlayerMove()
     {
-        float xInput = ARVRInput.GetAxis("Horizontal");
-        float zInput = ARVRInput.GetAxis("Vertical");
+        float xInput = Input.GetAxis("Horizontal");
+        float zInput = Input.GetAxis("Vertical");
 
         float xSpeed = xInput * MoveSpeed;
         float zSpeed = zInput * MoveSpeed;
 
-        transform.Translate(Vector3.forward * zSpeed * Time.deltaTime);
-        transform.Translate(Vector3.right * xSpeed * Time.deltaTime);
+        transform.Translate(Vector3.forward.normalized * zSpeed * Time.deltaTime, Space.Self);
+        transform.Translate(Vector3.right.normalized * xSpeed * Time.deltaTime, Space.Self);
     }
 
     void RotCtrl()
@@ -56,17 +55,8 @@ public class Move : MonoBehaviour
         this.transform.localRotation *= Quaternion.Euler(0, rotY, 0);
         // Camera의 transform 컴포넌트의 로컬로테이션의 오일러각에 
         // 현재X축 로테이션을 나타내는 오일러각을 할당해준다.
-        fpsCam.transform.localEulerAngles = new Vector3(currentRot, 0f, 0f);
-        lightCam.transform.localEulerAngles = new Vector3(currentRot, 0f, 0f);
-        //holder.transform.localEulerAngles = new Vector3(currentRot, 0f, 0f);
+        //lightCam.transform.localEulerAngles = new Vector3(currentRot, 0f, 0f);
+
     }
 
-    //void PlayerAttack()
-    //{
-    //    if(Input.GetMouseButtonDown(0))
-    //    {
-    //        GameObject.Find("Hand").GetComponent<Weapon>().Use();
-    //    }
-        
-    //}
 }
