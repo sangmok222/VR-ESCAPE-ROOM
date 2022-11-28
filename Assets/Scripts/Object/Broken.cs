@@ -32,7 +32,7 @@ public class Broken : MonoBehaviour
             GameObject go = Instantiate(prefab, transform.position, Quaternion.identity);
             //prefab = Resources.Load<GameObject>("Kettles");
             //kettle = Instantiate(prefab,transform.position, Quaternion.identity, null);
-            //Destroy(go, 3.0f); //갖고온 프리펩 3초후 삭제
+            Destroy(go, 3.0f); //갖고온 프리펩 3초후 삭제
         }
         
 

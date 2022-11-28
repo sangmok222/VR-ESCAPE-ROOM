@@ -10,6 +10,8 @@ public class Door : MonoBehaviour
     public float doorCloseAngle = 0f;
     public float smoot = 2f;
 
+    public RoomManager.ERoom roomType;
+
     void Start()
     {
         

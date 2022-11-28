@@ -17,122 +17,18 @@ public class DoorOpen : MonoBehaviour
     */
     
     
-    public float interactDiastance = 5f;
+    public float interactDiastance = 6f;
     private Animator ani;
-    bool open;
+    private RoomManager rm;
+    
     private void Start()
     {
         ani = GetComponent<Animator>();
+        rm = GameObject.Find("RoomManager").GetComponent<RoomManager>();
     }
     void Update()
     {
-        // 하나의 태그로관리 2022.11.24 우진
-        //if (Input.GetKeyDown(KeyCode.E))
-        //{
-        //    Ray ray = new Ray(transform.position, transform.forward);
-        //    RaycastHit hit;
-        //    if (Physics.Raycast(ray, out hit, interactDiastance))
-        //    {
-        //        if (hit.collider.CompareTag("Door"))
-        //        {
-        //            GameObject.Find("Door_V1").GetComponent<Door>().ChangeDoorState();
-
-        //        }
-        //    }
-        //}
-        //if (Input.GetKeyDown(KeyCode.E))
-        //{
-        //    Ray ray = new Ray(transform.position, transform.forward);
-        //    RaycastHit hit;
-        //    if (Physics.Raycast(ray, out hit, interactDiastance))
-        //    {
-        //        if (hit.collider.CompareTag("Door1"))
-        //        {
-        //            GameObject.Find("Door_V1 (1)").GetComponent<Door>().ChangeDoorState();
-
-        //        }
-        //    }
-        //}//
-        //if (Input.GetKeyDown(KeyCode.E))
-        //{
-        //    Ray ray = new Ray(transform.position, transform.forward);
-        //    RaycastHit hit;
-        //    if (Physics.Raycast(ray, out hit, interactDiastance))
-        //    {
-        //        if (hit.collider.CompareTag("Door2"))
-        //        {
-        //            GameObject.Find("Door_V1 (2)").GetComponent<Door>().ChangeDoorState();
-
-        //        }
-        //    }
-        //}//
-        //if (Input.GetKeyDown(KeyCode.E))
-        //{
-        //    Ray ray = new Ray(transform.position, transform.forward);
-        //    RaycastHit hit;
-        //    if (Physics.Raycast(ray, out hit, interactDiastance))
-        //    {
-        //        if (hit.collider.CompareTag("Door3"))
-        //        {
-        //            GameObject.Find("Door_V1 (5)").GetComponent<Door>().ChangeDoorState();
-
-        //        }
-        //    }
-        //}//
-        //if (Input.GetKeyDown(KeyCode.E))
-        //{
-        //    Ray ray = new Ray(transform.position, transform.forward);
-        //    RaycastHit hit;
-        //    if (Physics.Raycast(ray, out hit, interactDiastance))
-        //    {
-        //        if (hit.collider.CompareTag("Door4"))
-        //        {
-        //            GameObject.Find("Door_V1 (3)").GetComponent<Door>().ChangeDoorState();
-
-        //        }
-        //    }
-        //}//
-        //if (Input.GetKeyDown(KeyCode.E))
-        //{
-        //    Ray ray = new Ray(transform.position, transform.forward);
-        //    RaycastHit hit;
-        //    if (Physics.Raycast(ray, out hit, interactDiastance))
-        //    {
-        //        if (hit.collider.CompareTag("Door5"))
-        //        {
-        //            GameObject.Find("Door_V1 (4)").GetComponent<Door>().ChangeDoorState();
-
-        //        }
-        //    }
-        //}//
-        //if (Input.GetKeyDown(KeyCode.E))
-        //{
-        //    Ray ray = new Ray(transform.position, transform.forward);
-        //    RaycastHit hit;
-        //    if (Physics.Raycast(ray, out hit, interactDiastance))
-        //    {
-        //        if (hit.collider.CompareTag("Door7"))
-        //        {
-        //            GameObject.Find("Door_V1 (7)").GetComponent<Door>().ChangeDoorState();
-
-        //        }
-        //    }
-        //}//
-
-       
-        //if (OVRInput.GetDown(OVRInput.Button.Two) || Input.GetKeyDown(KeyCode.E))
-        //{
-        //    Ray ray = new Ray(transform.position, transform.forward);
-        //    RaycastHit hit;
-        //    if (Physics.Raycast(ray, out hit, interactDiastance))
-        //    {
-        //        if (hit.collider.CompareTag("Door6"))
-        //        {
-        //            GameObject.Find("Door_V1 (6)").GetComponent<Door>().ChangeDoorState();
-
-        //        }
-        //    }
-        //}
+        
         if (OVRInput.GetDown(OVRInput.Button.Two) || Input.GetKeyDown(KeyCode.E))
         {
             Ray ray = new Ray(transform.position, transform.forward);
@@ -155,9 +51,11 @@ public class DoorOpen : MonoBehaviour
                 else if (hit.collider.CompareTag("Door"))
                 {
                     hit.transform.GetComponent<Door>().ChangeDoorState();
+                    rm.LoadRoom(hit.transform.GetComponent<Door>().roomType, true);
+                    
                 }
             }
-        }//
+        }
        
     }
 }
