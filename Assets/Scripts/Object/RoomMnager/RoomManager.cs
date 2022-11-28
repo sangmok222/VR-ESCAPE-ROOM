@@ -46,8 +46,16 @@ public class RoomManager : MonoBehaviour
         switch (_room)
         {
             case ERoom.kHWRoom:
-                HWRoom.SetActive(_isOpen);
+                if (_isOpen)
+                {
+                    HWRoom.SetActive(_isOpen);
+                }
+                else if (!_isOpen)
+                {
+                    HWRoom.SetActive(!_isOpen);
+                }
                 break;
+                
             case ERoom.kWJRoom1:
                 WJRoom1.SetActive(_isOpen);
                 break;
@@ -59,6 +67,8 @@ public class RoomManager : MonoBehaviour
                 break;
 
         }
-        _isOpen =  !_isOpen;
+
+      
     }
+
 }
