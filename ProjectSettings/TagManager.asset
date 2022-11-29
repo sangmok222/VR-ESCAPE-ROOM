@@ -24,6 +24,7 @@ TagManager:
   - Door1
   - Door2
   - ENEMY
+  - Gloves
   layers:
   - Default
   - TransparentFX

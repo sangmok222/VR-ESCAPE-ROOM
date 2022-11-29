@@ -23,7 +23,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 300}
   m_MaxSize: {x: 24288, y: 24288}
   vertical: 1
-  controlID: 130458
+  controlID: 18806
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 300}
   m_MaxSize: {x: 24288, y: 24288}
   vertical: 0
-  controlID: 130459
+  controlID: 18807
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 300}
   m_MaxSize: {x: 8096, y: 24288}
   vertical: 1
-  controlID: 130460
+  controlID: 18782
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -187,8 +187,8 @@ MonoBehaviour:
     y: 0
     width: 1051
     height: 418
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -420,9 +420,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -5.8911667, y: 5.340313, z: -21.68814}
+    m_Target: {x: 0, y: 1, z: -10}
     speed: 2
-    m_Value: {x: -5.8911667, y: 5.340313, z: -21.68814}
+    m_Value: {x: 0, y: 1, z: -10}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -469,13 +469,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.0902451, y: -0.010641056, z: -0.00189471, w: 0.9962622}
+    m_Target: {x: 0.15124723, y: 0.011578719, z: -0.0041275574, w: 0.98883164}
     speed: 2
-    m_Value: {x: 0.09020905, y: -0.010636806, z: -0.0018939532, w: 0.9958643}
+    m_Value: {x: 0.15118565, y: 0.011574005, z: -0.004125877, w: 0.988429}
   m_Size:
-    m_Target: 3.7695646
+    m_Target: 0.8660254
     speed: 2
-    m_Value: 3.7695646
+    m_Value: 0.8660254
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -547,8 +547,8 @@ MonoBehaviour:
     y: 418
     width: 1051
     height: 347
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 2}
   m_Panes:
   - {fileID: 2}
@@ -748,7 +748,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 130381
+  controlID: 18808
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -808,7 +808,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 2672faffb872faff0473fafff4d0fcff2e0efdffec70fdffda71fdffea71fdff8072fdff9872fdff7e74fdff0a7cfdff267cfdff62defdffa00dfeff4e1dfeffee27feff2837fefffa0dffff70b2ffff1cd8ffffc4daffff10dbffff92e3ffffbee3ffff10e4ffff28e4ffff40e4ffff62e4ffffa6e4ffffdee6ffff00e7ffff1ce7ffff82e7ffff24ebffff50ebffffcaebffffe8ebffff00ecffff1eecffff32f6fffffcf9ffff2cfbffffde6d0000
+      m_ExpandedIDs: 7469feffecf9ffffeef9ffff0cfaffff14fbffff2cfbffff186e00001c6e0000266e00008e6e0000a46e000016730000447300001474000072740000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -899,22 +899,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/P_Prefabs/Object/Room
+    - Assets/Scripts/Player/Door
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/P_Prefabs/Object/Room
+  - Assets/Scripts/Player/Door
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\admin\Documents\GitHub\TeamProject
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 486}
-    m_SelectedIDs: d0a80000
-    m_LastClickedID: 43216
-    m_ExpandedIDs: 000000002aa200002ca2000030a2000032a2000034a20000dea4000004a500009ca8000000ca9a3b
+    scrollPos: {x: 0, y: 898}
+    m_SelectedIDs: c49a0000
+    m_LastClickedID: 39620
+    m_ExpandedIDs: 000000004499000046990000489900004a9900004c9900004e99000052990000549900005699000058990000a29a0000b69a00004e9c0000689c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -942,7 +942,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000002aa200002ca2000030a2000032a2000034a2000004a500009ca8000000ca9a3b
+    m_ExpandedIDs: 000000004499000046990000489900004a9900004c9900004e99000052990000549900005699000058990000a29a00004e9c0000689c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -967,24 +967,24 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: dc6d0000
-    m_LastClickedInstanceID: 28124
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: 186e0000
+    m_LastClickedInstanceID: 28184
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 32af000082ef0000283001002a300100fe421000c28801004c9b0000dca6000000000000469f05008e720100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Projector
+      m_OriginalName: Projector
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 3412
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 15}
     m_CreateAssetUtility:
@@ -1017,8 +1017,8 @@ MonoBehaviour:
     y: 0
     width: 503
     height: 947
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -1056,10 +1056,10 @@ MonoBehaviour:
   m_ObjectsLockedBeforeSerialization: []
   m_InstanceIDsLockedBeforeSerialization: 
   m_PreviewResizer:
-    m_CachedPref: 215
+    m_CachedPref: -215
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: 28124
+  m_LastInspectedObjectInstanceID: 28184
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0

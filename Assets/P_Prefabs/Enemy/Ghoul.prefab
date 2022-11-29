@@ -1035,6 +1035,8 @@ GameObject:
   - component: {fileID: 4170436352344424397}
   - component: {fileID: 1536709151391719605}
   - component: {fileID: 1598122398}
+  - component: {fileID: 1183758128876399480}
+  - component: {fileID: -1817416264686701902}
   m_Layer: 0
   m_Name: Ghoul
   m_TagString: ENEMY
@@ -1051,7 +1053,7 @@ Transform:
   m_GameObject: {fileID: 1309486516299566}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.008842, y: 0.62827015, z: -11.92}
-  m_LocalScale: {x: 0.55, y: 0.55, z: 0.55}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4637244262425910}
@@ -1183,12 +1185,40 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1309486516299566}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 1
   m_Height: 3.5
   m_Direction: 1
   m_Center: {x: 0, y: 1.8, z: 0}
+--- !u!54 &1183758128876399480
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309486516299566}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &-1817416264686701902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309486516299566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af610900c8a21444585455d9777ea526, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1312574273513674
 GameObject:
   m_ObjectHideFlags: 0

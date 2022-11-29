@@ -31,7 +31,7 @@ public class Projector : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (OVRInput.GetDown(OVRInput.Button.Two))
         {
             VideoPlay();
             LightStart();

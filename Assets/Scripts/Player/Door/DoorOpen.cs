@@ -52,8 +52,8 @@ public class DoorOpen : MonoBehaviour
                 {
                     hit.transform.GetComponent<Door>().ChangeDoorState();
                     rm.LoadRoom(hit.transform.GetComponent<Door>().roomType, true);
-                    
                 }
+                
             }
         }
        
