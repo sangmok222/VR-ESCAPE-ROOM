@@ -27,7 +27,7 @@ public class ActionController : MonoBehaviour
 
     private void TryAction()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (OVRInput.GetDown(OVRInput.Button.Two))
         {
             CheckItem();
             CanPickUp();

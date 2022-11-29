@@ -40,8 +40,8 @@ public class Gloves : MonoBehaviour
         if (OVRInput.GetDown(OVRInput.Button.Four))
         {
             // ºÐ¸®
-            //attachGo.transform.parent = null;
-            hand_Gloves.SetActive(false);
+            attachGo.transform.parent = null;
+            //hand_Gloves.SetActive(false);
         }
 
     }

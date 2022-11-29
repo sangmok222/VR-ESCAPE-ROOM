@@ -10,21 +10,14 @@ TagManager:
   - RoomLight
   - Door
   - Door4
-  - Door5
-  - Door6
-  - Door7
   - Melee
   - ASYLUM
   - SHEET
   - BROKEN
   - FDOOR
-  - FDOOR1
-  - SHEET1
-  - Door3
-  - Door1
-  - Door2
   - ENEMY
   - Gloves
+  - FILM
   layers:
   - Default
   - TransparentFX

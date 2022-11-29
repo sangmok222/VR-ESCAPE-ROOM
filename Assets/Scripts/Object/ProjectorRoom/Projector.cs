@@ -29,17 +29,13 @@ public class Projector : MonoBehaviour
         
     }
 
-    private void Update()
+ public void FilmPlay()
     {
-        if (OVRInput.GetDown(OVRInput.Button.Two))
-        {
-            VideoPlay();
-            LightStart();
-            cubeRot.StartRotate();
-            cubeRot1.StartRotate();
-            Invoke("ExitProjector", 31f);
-        }
-
+        VideoPlay();
+        LightStart();
+        cubeRot.StartRotate();
+        cubeRot1.StartRotate();
+        Invoke("ExitProjector", 31f);
     }
     void VideoPlay()
     {

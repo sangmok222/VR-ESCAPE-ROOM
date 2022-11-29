@@ -4,17 +4,6 @@ using UnityEngine;
 
 public class DoorOpen : MonoBehaviour
 {
-    /*
-    public GameObject D1;
-    public GameObject D2;
-    public GameObject D3;
-    public GameObject D4;
-    public GameObject D5;
-    public GameObject D6;
-    public GameObject D7;
-    public GameObject D8;
-    public GameObject Door_V2;
-    */
     
     
     public float interactDiastance = 6f;
@@ -31,6 +20,10 @@ public class DoorOpen : MonoBehaviour
         
         if (OVRInput.GetDown(OVRInput.Button.Two) || Input.GetKeyDown(KeyCode.E))
         {
+            //float rotX = Input.GetAxis("Mouse Y") * rotSpeed;
+            //float rotY = OVRInput.GetDown() * rotSpeed;
+            //this.transform.localRotation *= Quaternion.Euler(0, rotY, 0);
+
             Ray ray = new Ray(transform.position, transform.forward);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, interactDiastance))
@@ -39,11 +32,6 @@ public class DoorOpen : MonoBehaviour
                 {
                     hit.transform.GetComponent<FridgeOpen>().ChangeDoorState();
                 }
-                //else if (hit.collider.CompareTag("FDOOR"))
-                //{
-                //    GameObject.Find("FridgeDoor").GetComponent<FridgeOpen>().ChangeDoorState();
-                //}
-                
                 else if (hit.collider.CompareTag("SHEET"))
                 {
                     hit.transform.GetComponent<SheetRackCaseAni>().aniplay();
@@ -53,9 +41,15 @@ public class DoorOpen : MonoBehaviour
                     hit.transform.GetComponent<Door>().ChangeDoorState();
                     rm.LoadRoom(hit.transform.GetComponent<Door>().roomType, true);
                 }
+                else if (hit.collider.CompareTag("FILM"))
+                {
+                    
+                    hit.transform.GetComponent<Projector>().FilmPlay();
+                }
                 
             }
         }
-       
+        Debug.DrawRay(transform.position, transform.forward * interactDiastance, Color.red);
+
     }
 }
